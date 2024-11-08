@@ -1,0 +1,495 @@
+/* Custom styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+section {
+    padding-top: 100px;
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.red-text{
+    color: #E97452 ;
+}
+
+.typed-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 4px solid #fff;
+    /* Cursor effect */
+    width: 0;
+    white-space: nowrap;
+    animation: typing 3s steps(20) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: #fff;
+    }
+}
+
+/* Background Animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Adjust the canvas styling */
+.three-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Makes sure canvas is non-interactive */
+    z-index: 0;
+}
+
+/* Ensure text and content stays above the animated background */
+.section-focus>* {
+    position: relative;
+    z-index: 1;
+}
+
+.section-focus {
+    background: linear-gradient(270deg, #ff7e5f, #feb47b, #f2709c, #ff9472);
+    background-size: 800% 800%;
+    animation: gradient 10s ease infinite;
+}
+
+/* Navbar styling */
+#navbar {
+    background-color: rgba(31, 41, 55, 0.7);
+    /* Slight opacity for background */
+    transition: background-color 0.3s ease;
+}
+
+#navbar.scrolled {
+    background-color: rgba(31, 41, 55, 0.9);
+    /* Darker background on scroll */
+}
+
+/* Logo Animation */
+.logo-animation {
+    transition: transform 0.3s ease;
+}
+
+.logo-animation:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Link Animation */
+.nav-links {
+    position: relative;
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.25rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #38bdf8;
+    /* Tailwind's Sky-400 color */
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #38bdf8;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+/* Active Link Underline Indicator */
+.underline {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #38bdf8;
+    transition: all 0.3s ease;
+}
+
+/* Skills Section Button Styling */
+.skill-button {
+    background-color: #1f2937;
+    /* Dark gray background */
+    color: #ffffff;
+    /* White text */
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid transparent;
+    border-radius: 0.375rem;
+    /* Rounded corners */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.skill-button:hover {
+    transform: scale(1.1);
+    border-color: #38bdf8;
+    /* Sky-400 border on hover */
+}
+
+/* Fancy Button Background Animation */
+.skill-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(56, 189, 248, 0.2);
+    /* Sky-400 with opacity */
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.skill-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Make text appear above animated background */
+.skill-button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Project Card Styles */
+.project-card {
+    background-color: #1f2937;
+    /* Dark gray background */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    /* Enlarges card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Shadow transition */
+}
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+    /* Zoom-in effect on hover */
+}
+
+/* Project Content */
+.project-content {
+    padding: 1.5rem;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* GitHub Link Styling */
+.github-link {
+    color: #38bdf8;
+    /* Tailwind's Sky-400 color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: #0ea5e9;
+    /* Slightly darker blue on hover */
+}
+
+/* Card Animation Effect */
+.project-card {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Section Styling */
+.section-focus {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+/* Three.js Canvas */
+.three-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+    /* Reduce opacity for a softer background effect */
+}
+
+/* Content Container */
+.content-container {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    /* Optional background overlay */
+    padding: 2rem;
+    border-radius: 8px;
+    /* Adds a rounded effect */
+}
+
+
+/* Content styling within each section */
+/* .section-focus>.content-wrapper {
+    position: relative;
+    z-index: 1; */
+    /* Ensures content is above the canvas */
+    /* max-width: 80%;
+    text-align: center;
+    backdrop-filter: blur(5px); */
+    /* Optional: adds a slight blur for readability */
+    /* padding: 2rem; */
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    /* Optional: semi-transparent background for better readability */
+    /* border-radius: 10px; */
+    /* Optional: for rounded corners */
+/* } */
+
+/* Basic full-screen section styling */
+.section-focus {
+    min-height: 100vh;
+    padding: 3rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Non-focused sections will appear dimmed */
+.section-focus.dimmed {
+    opacity: 0.2;
+    transform: scale(0.95);
+}
+
+/* Fullscreen Three.js Canvas Background */
+#threejs-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Ensures text in About Me section appears above the canvas */
+.section-focus.relative .relative {
+    z-index: 10;
+    color: white;
+}
+
+/* Centering content in each section */
+.section-focus {
+    position: relative;
+    /* Makes sure the section itself is the reference point */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    /* Add padding for better spacing */
+    min-height: 100vh;
+    overflow: hidden;
+    /* Ensures any overflow from the animation is hidden */
+}
+
+/* Fix for Three.js canvas */
+.three-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensuring content stays above canvas */
+.section-focus>* {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    /* Optional: Limits content width for a more centered look */
+    text-align: center;
+    /* Centers text if the section content has text elements */
+}
+
+.about-image {
+    width: 200px;
+    /* Adjust image size */
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.1);
+    /* Enlarge the image on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Add shadow on hover */
+}
+
+.section-active {
+    background-color: #4A90E2;
+    /* Custom color when active */
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.about-image {
+    animation: glow 2s infinite alternate;
+}
+
+/* Adding animated background gradient */
+.section {
+    position: relative;
+    background: linear-gradient(45deg,#000000, #0d0015, #161B36, #242B4B);
+    background-size: 300% 300%;
+    animation: gradientBackground 8s ease infinite;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animated particle background */
+.section {
+    position: relative;
+    overflow: hidden;
+    /* Hide anything outside the section */
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    /* You can use any texture or a gradient */
+    background-size: 50px 50px;
+    animation: moveBackground 10s linear infinite;
+    opacity: 0.3;
+    /* Make it subtle */
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Input focus animations */
+input:focus,
+textarea:focus {
+    border-color: #60A5FA;
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.7);
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #3B82F6;
+}

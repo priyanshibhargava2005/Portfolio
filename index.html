@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priyanshi's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- Add this line inside the <head> tag of your HTML -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <header id="navbar" class="fixed w-full p-4 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold logo-animation"><span class="red-text">Portfolio</span></h1>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Hero Section with Three.js Background -->
+    <section id="home" class="h-screen flex items-center justify-center relative overflow-hidden">
+        <canvas id="background"></canvas>
+        <div class="relative z-10 text-center">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="typed-text">Hi, I'm <span class="red-text">Priyanshi</span></span></h2>
+            <p class="text-lg">A Passionate Web Developer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800 section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6 text-center text-white">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <!-- Your Image with Stylish Effects -->
+                <div class="relative mb-8 md:mb-0 md:mr-8">
+                    <img src="my-photo.png" alt="Priyanshi's Photo"
+                        class="about-image transition-transform duration-500 ease-in-out transform hover:scale-110 shadow-lg rounded-full border-4 border-pink-500">
+                    <!-- Add a hover animation to enlarge the image -->
+                </div>
+                <!-- About Text -->
+                <div class="text-center md:text-left">
+                    <p class="text-lg text-white max-w-2xl mx-auto md:mx-0">
+                        I'm a passionate third-year Computer Science student with a knack for creating innovative web solutions. With hands-on
+                        experience in web development, I've honed my skills in HTML, CSS, JavaScript, and React, building everything from
+                        responsive websites to custom web applications. When I’m not coding, I’m exploring IoT projects and tackling challenges
+                        with a creative approach. As a co-head of TEDMUN, I thrive in collaborative environments, leading teams to success while
+                        pushing the boundaries of what we can achieve together. I’m always excited to learn, grow, and make an impact through
+                        technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section with Animated Buttons -->
+    <section id="skills" class="py-20 section" data-aos="fade-up" data-aos-delay="100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6 text-center">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <button class="skill-button">HTML</button>
+                <button class="skill-button">CSS</button>
+                <button class="skill-button">JavaScript</button>
+                <button class="skill-button">React.js</button>
+                <button class="skill-button">Tailwind CSS</button>
+                <button class="skill-button">MERN Stack</button>
+                <button class="skill-button">Java</button>
+                <button class="skill-button">C++</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section with Enlarging Animated Cards -->
+    <section id="projects" class="py-20 bg-gray-800 section" data-aos="fade-up" data-aos-delay="200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6 text-center text-white">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card -->
+                <div class="project-card">
+                    <img src="project1-preview.png" alt="Project 1" class="project-image" />
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-2">Timetable Generator</h3>
+                        <p class="mb-4">A brief description of the project goes here, highlighting key features and purpose.
+                        </p>
+                        <a href="https://github.com/MatricalDefunkt/timetable-manager" target="_blank" class="github-link">View on
+                            GitHub</a>
+                    </div>
+                </div>
+                <!-- Duplicate and customize more project cards as needed -->
+                <div class="project-card">
+                    <img src="project2-preview.jpg" alt="Project 2" class="project-image" />
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-2">College Feedback System</h3>
+                        <p class="mb-4">Another project description. Explain the technologies and unique aspects.</p>
+                        <a href="https://github.com/MatricalDefunkt/sys-1" target="_blank" class="github-link">View on
+                            GitHub</a>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+                <div class="project-card">
+                    <img src="project3-preview.png" alt="Project 3" class="project-image" />
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-2">Handfont</h3>
+                        <p class="mb-4">A brief description of the project goes here, highlighting key features and purpose.
+                        </p>
+                        <a href="https://github.com/devvratsaini/handfont" target="_blank" class="github-link">View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experience Section -->
+<section id="experience" class="py-20 bg-gray-800 section relative">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-6 text-center text-white">Experience</h2>
+        <p class="text-center text-white mb-8">Here are some of the experiences I've had in web development,
+            internships, and projects.</p>
+
+        <div class="relative">
+            <div class="absolute left-1/2 border-l-2 border-gray-500 h-full top-0"></div>
+
+            <div class="flex flex-col items-center space-y-8">
+                <!-- Timeline Entry 1 -->
+                <div class="relative text-center z-10">
+                    <div class="bg-blue-500 p-4 rounded-full shadow-lg w-16 h-16 mx-auto mb-4">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-xl max-w-xs mx-auto">
+                        <h3 class="text-2xl font-bold text-white mb-2">Frontend Developer</h3>
+                        <p class="text-sm text-gray-400">Project Human City</p>
+                        <p class="text-sm text-gray-400">June 2024 - September 2024</p>
+                        <p class="mt-4 text-white">Worked on React.js applications with a focus on frontend and user
+                            interface design for webapps.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Entry 2 -->
+                <div class="relative text-center z-10">
+                    <div class="bg-blue-500 p-4 rounded-full shadow-lg w-16 h-16 mx-auto mb-4">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-xl max-w-xs mx-auto">
+                        <h3 class="text-2xl font-bold text-white mb-2">Co Head</h3>
+                        <p class="text-sm text-gray-400">Ted MUN Club</p>
+                        <p class="text-sm text-gray-400">Jan 2023 - Present</p>
+                        <p class="mt-4 text-white">Assisted with several public speaking events for the college including an intra-college MUN</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Entry 3 -->
+                <div class="relative text-center z-10">
+                    <div class="bg-blue-500 p-4 rounded-full shadow-lg w-16 h-16 mx-auto mb-4">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-xl max-w-xs mx-auto">
+                        <h3 class="text-2xl font-bold text-white mb-2">Developed Feedback System </h3>
+                        <p class="text-sm text-gray-400">Symbiosis Institute of Technology</p>
+                        <p class="text-sm text-gray-400">Aug 2023 - Present</p>
+                        <p class="mt-4 text-white">Designed and developed custom feedback system website for the college.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-800 section-relative">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-6 text-center text-white">Contact Me</h2>
+        <p class="text-center text-white mb-8">I'd love to hear from you! Fill out the form below or reach out directly.
+        </p>
+        <div class="flex justify-center">
+            <form action="#" method="POST" class="max-w-lg w-full bg-gray-700 p-6 rounded-lg shadow-xl">
+                <div class="mb-4">
+                    <label for="name" class="text-white font-medium">Your Name</label>
+                    <input type="text" id="name" name="name"
+                        class="form-input mt-2 p-3 w-full rounded-lg bg-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="text-white font-medium">Your Email</label>
+                    <input type="email" id="email" name="email"
+                        class="form-input mt-2 p-3 w-full rounded-lg bg-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="subject" class="text-white font-medium">Subject</label>
+                    <input type="text" id="subject" name="subject"
+                        class="form-input mt-2 p-3 w-full rounded-lg bg-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="text-white font-medium">Your Message</label>
+                    <textarea id="message" name="message"
+                        class="form-input mt-2 p-3 w-full rounded-lg bg-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        rows="5" required></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition duration-300">Send
+                    Message</button>
+            </form>
+        </div>
+
+        <div class="mt-8 text-center">
+            <h3 class="text-white text-xl font-semibold">Or, reach out through social media:</h3>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://www.linkedin.com/in/priyanshi-bhargava-091416258/" target="_blank"
+                    class="text-white hover:text-blue-500 transition duration-300">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/priyanshibhargava2005" target="_blank"
+                    class="text-white hover:text-gray-400 transition duration-300">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="mailto:priyanshi.bhargava05@gmail.com" class="text-white hover:text-pink-500 transition duration-300">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="app.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    <script src="smooth-scroll.js"></script>
+    </body>
+    
+    </html>
